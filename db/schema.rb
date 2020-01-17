@@ -16,9 +16,19 @@ ActiveRecord::Schema.define(version: 2020_01_17_185220) do
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.int "cost"
+    t.string "country_of_origin"
+    t.datetime "created_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.string "name"
+    t.string "author"
+    t.string "content_body"
+    t.int "rating"
+    t.datetime "created_at", nell: false
+    t.datetime "updated_at", nell: false
   end
 
 end
