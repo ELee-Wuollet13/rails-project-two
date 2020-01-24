@@ -1,5 +1,9 @@
 class ProductsController < ApplicationController
 
+  def index
+    @photos = Photo.all
+  end
+
   def new
     @product = Product.new
   end

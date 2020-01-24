@@ -1,3 +1,11 @@
-this is the product index
+<h1>Please peruse our wares and if theirs anything specfic your interested in , let us know with a comment!</h1>
+<% if @products.any? %>
+<% @products.each do |product| %>
+<ul>
+  <li><%= product.name %></li>
+</ul>
 
-  <p><%= link_to "New Product", new_product_path %></p>
+<% end %>
+<% else %>
+<p>Oh no, our shelves are bare! Please return soon when we've restocked 😅</p>
+<% end  %>

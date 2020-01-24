@@ -1,1 +1,8 @@
-New product page
+<h1>New Product!</h1>
+
+<%= form_for @product do |f| %>
+  <%= f.label :url %>
+  <%= f.file_field :url %>
+
+  <%= f.submit  %>
+<% end %>
