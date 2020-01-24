@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
       redirect_to signup_path
     end
   end
-
+  
   private
 
   def product_params

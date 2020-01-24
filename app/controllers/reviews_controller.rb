@@ -22,3 +22,4 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:authors, :content_body, :foreign_key)
   end
 end
+ 
