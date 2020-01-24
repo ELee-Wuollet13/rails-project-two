@@ -1,4 +1,4 @@
-<h1>Please peruse our wares and if theirs anything specfic your interested in, let us know with a comment!</h1>
+<h3>Please peruse our wares and if theirs anything specfic your interested in, let us know with a comment!</h3>
 <% if @products.any? %>
 <% @products.each do |product| %>
 <ul>
@@ -9,3 +9,5 @@
 <% else %>
 <p>Oh no, our shelves are bare! Please return soon when we've restocked 😅</p>
 <% end  %>
+
+<p><%= link_to "Create new product", new_album_path %></p>
