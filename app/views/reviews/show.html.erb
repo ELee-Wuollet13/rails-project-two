@@ -1,0 +1,25 @@
+<h1><%= @project.name %></h1>
+
+
+<% if @project.reviews.any? %>
+  <h4>Here are the reviews for this project:</h4>
+
+  <% @project.reviews.each do |review| %>
+    <ul>
+      <li>
+        <%= link_to review.name, project_review_path(@project, review) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No reviews are listed for this project.</p>
+<% end %>
+
+<p><%= link_to "Add a review", new_project_review_path(@project) %></p>
+
+<p><%= link_to "Edit", edit_project_path(@project) %></p>
+<p><%= link_to "Delete project", project_path(@project),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to projects", projects_path %></p>
