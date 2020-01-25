@@ -4,8 +4,12 @@ class Product < ApplicationRecord
 
   before_save(:titleize_project)
 
-private
+  private
   def titleize_project
-    self.name = self.name.titleize
+    # self.name = self.name.titleize
+
+    self.name = self.name.try(:titleize)
+
+
   end
 end

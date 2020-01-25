@@ -1,15 +1,17 @@
-<h1>New Album</h1>
+<h2>New Album</h2>
 
-<%= render "layouts/project_form" %>
+<%# <%= render "layouts/project_form" %> %>
 
-<h1>New Product!</h1>
+<h2>New Product!</h2>
 
 <%= form_for @product do |f| %>
   <%= f.label :name %>
-  <%= f.file_field :name %>
+  <%= f.text_field :name %><br>
   <%= f.label :cost %>
-  <%= f.file_field :cost %>
-  <%= f.label :country_of_origin %>
-  <%= f.file_field :country_of_origin %>
+  <%= f.text_field :cost %><br>
+  <%= f.label :country %>
+  <%= f.text_field :country %><br>
   <%= f.submit  %>
 <% end %>
+
+<p><%= link_to "Return to index", products_path %></p>

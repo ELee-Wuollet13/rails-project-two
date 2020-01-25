@@ -1,3 +1,13 @@
 <h1>Edit Album</h1>
 
 <%= render "layouts/album_form" %>
+
+<%= form_for @album do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+  <%= f.label :country_of_origin %>
+  <%= f.text_field :country_of_origin %>
+  <%= f.submit  %>
+<% end %>
