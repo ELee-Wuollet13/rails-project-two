@@ -1,20 +1,20 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @reviews = Review.all
     render :index
   end
 
   def new
-    @product = Product.new
+    @review = Review.new
     render :new
   end
 
   def create
-    @album = Album.find(params[:album_id])
-    @song = @album.songs.new(song_params)
-    if @song.save
-      redirect_to album_path(@album)
+    @product = Product.find(params[:product_id])
+    @review = @product.reviews.new(review_params)
+    if @review.save
+      redirect_to product_path(@product)
     else
       render :new
     end
@@ -22,34 +22,34 @@ class ProductsController < ApplicationController
 
 
   def edit
-    @album = Album.find(params[:album_id])
-    @song = Song.find(params[:id])
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
     render :edit
   end
-  
+
   def show
-    @album = Album.find(params[:album_id])
-    @song = Song.find(params[:id])
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
     render :show
   end
 
   def update
-    @song = Song.find(params[:id])
-    if @song.update(song_params)
-      redirect_to album_path(@song.album)
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to product_path(@review.product)
     else
       render :edit
     end
   end
 
   def destroy
-    @song = Song.find(params[:id])
-    @song.destroy
-    redirect_to album_path(@song.album)
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to product_path(@review.product)
   end
 
   private
-  def song_params
-    params.require(:song).permit(:name, :lyrics)
+  def review_params
+    params.require(:review).permit(:author, :content, :rating, :id)
   end
 end
