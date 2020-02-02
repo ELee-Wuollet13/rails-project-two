@@ -1,9 +1,9 @@
-<h3><%= @project.name %></h3>
+<h3><%= @product.name %></h3>
 
 
-<p><%= link_to "Edit", edit_project_path(@project) %></p>
-<p><%= link_to "Delete", project_path(@project),
+<p><%= link_to "Edit", edit_product_path(@product) %></p>
+<p><%= link_to "Delete", product_path(@product),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
 
-<p><%= link_to "Return to projects", projects_path %></p>
+<p><%= link_to "Return to products", products_path %></p>

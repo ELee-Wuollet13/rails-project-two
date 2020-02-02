@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
     end
 
     def show
-      @project = Project.find(params[:id])
+      @product = Product.find(params[:id])
       render :show
     end
 
@@ -44,8 +44,9 @@ class ProductsController < ApplicationController
       @project.destroy
       redirect_to projects_path
     end
+
   private
   def product_params
-    params.require(:product).permit(:name, :cost, :country, :id)
+    params.require(:product).permit(:name, :cost, :country)
   end
 end
