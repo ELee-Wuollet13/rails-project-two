@@ -31,18 +31,18 @@ class ProductsController < ApplicationController
     end
 
     def update
-      @project= Project.find(params[:id])
-      if @project.update(project_params)
-        redirect_to projects_path
+      @product= Product.find(params[:id])
+      if @product.update(product_params)
+        redirect_to products_path
       else
         render :edit
       end
     end
 
     def destroy
-      @project = Project.find(params[:id])
-      @project.destroy
-      redirect_to projects_path
+      @product = Product.find(params[:id])
+      @product.destroy
+      render :show
     end
 
   private
