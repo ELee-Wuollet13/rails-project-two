@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  has_many :reviews, dependent: :destroy
+  has_many :review
 
 
   # before_save(:titleize_project)

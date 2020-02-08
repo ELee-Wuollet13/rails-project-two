@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
@@ -19,7 +19,6 @@ class ProductsController < ApplicationController
       render :new
     end
   end
-
 
   def edit
     @product = Product.find(params[:product_id])
