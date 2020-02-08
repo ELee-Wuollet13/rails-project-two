@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <h1>Add a new review:</h1>
 
 
@@ -9,4 +11,9 @@
   <%= f.label :rating %>
   <%= f.text_area :rating %>
   <p><%= f.submit %></p>
+<% end %>
+
+
+<% else %>
+<p>Sorry, you need to log in to leave a comment</p>
 <% end %>
