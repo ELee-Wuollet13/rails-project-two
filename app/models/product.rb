@@ -1,11 +1,11 @@
 class Product < ApplicationRecord
-  has_many :review
+  has_many :review, dependent: :destroy
 
 
-  # before_save(:titleize_project)
+  # before_save(:titleize_product)
   #
   # private
-  # def titleize_project
+  # def titleize_product
   #   # self.name = self.name.titleize
   #
   #   self.name = self.name.try(:titleize)
