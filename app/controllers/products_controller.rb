@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
   end
 
   def new
-    # before_action :authenticate_admin!, only: [:action]
     @product = Product.new
     render :new
   end
@@ -41,7 +40,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    before_action :authenticate_admin!, only: [:action]
     @product = Product.find(params[:id])
     @product.destroy
     render :show
