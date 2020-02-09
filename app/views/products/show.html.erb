@@ -1,25 +1,7 @@
 <h1><%= @product.name %></h1>
 
-<% if @product.review.any? %>
-<h4>Here are the users who have reviewed this product:</h4>
 
-<% @product.review.each do |review| %>
-<ul>
-  <li>
-    <%= link_to review.author, product_reviews_path(@product, @review) %>
-    <ul>
-      <li> Rating: <%= review.rating %></li>
-      <p><%= review.content %></p>
-      <p><%= link_to "Delete review", product_review_path(@review),
-        :data => {:confirm => "Are you sure?",
-        :method => "delete"} %></p>
-      </ul>
-    </li>
-  </ul>
-  <% end %>
-  <% else %>
-  <p>No reviews are listed for this product.</p>
-  <% end %>
+  <p><%= link_to "View reviews", product_review_path(@product) %></p>
 
   <% if user_signed_in? %>
   <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
