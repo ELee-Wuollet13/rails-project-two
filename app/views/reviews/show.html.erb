@@ -10,9 +10,12 @@
     <ul>
       <li> Rating: <%= review.rating %></li>
       <p><%= review.content %></p>
+        <% if user_signed_in? %>
       <p><%= link_to "Delete review", product_review_path(@review),
         :data => {:confirm => "Are you sure?",
         :method => "delete"} %></p>
+        <% else %>
+        <% end %>
       </ul>
     </li>
   </ul>
