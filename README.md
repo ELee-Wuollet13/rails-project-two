@@ -1,28 +1,36 @@
-# README
+# __
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### _This program runs a sales and reveiw site_
 
-change for upkeep
+#### By _**Everett Lee-Wuollet**_
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+_This application runs a basic sales and review environment where one may purchase and review electronics._
 
-* System dependencies
+## Setup/Installation Requirements
 
-* Configuration
+* _Access the GitHub repository at https://github.com/ELee-Wuollet13/Hal9000 _
+* _Use the Git Clone dropdown to get copy the link to the project_
+* _In the console run 'bash startup.bash'_
+* _In your browser navigate to 'localhost:3000'_
+* _Enjoy_
 
-* Database creation
+_This app has been tested in Google Chrome_
 
-* Database initialization
+## Known Bugs
 
-* How to run the test suite
+_No known bugs_
 
-* Services (job queues, cache servers, search engines, etc.)
+## Support and contact details
 
-* Deployment instructions
+_If you have any questions comments or concerns please contact me via Email at everett.leewuollet@gmail.com_
 
-* ...
+## Technologies Used
 
-second rails project
+_This app was made using Ruby on rails, devise authentication and Faker seeding_
+
+### License
+
+
+Copyright (c) 2016 **_Everett Lee-Wuollet_**
