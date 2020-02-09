@@ -10,4 +10,8 @@
 <p>Oh no, our shelves are bare! Please return soon when we've restocked 😅</p>
 <% end  %>
 
+<% if current_user && current_user.admin? %>
 <p><%= link_to "Create new product", new_product_path %></p>
+<% else %>
+<p>Sorry, you do not have the access required to add products</p>
+<% end %>

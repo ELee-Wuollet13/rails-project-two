@@ -1,7 +1,18 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def authenticate_admin
+    if current_user.admin != true
+      flash[:alert] = "You aren't authorized to visit that page."
+    end
+  end
+
   protected
-  def authenticate_admin!
-    authenticate_user!
-    redirect_to :index, status: :forbidden unless current_user.admin?
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:admin, :email, :password)}
+
+    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:admin, :email, :password, :current_password)}
   end
 end

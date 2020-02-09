@@ -1,18 +1,22 @@
 <h1><%= @product.name %></h1>
 
 
-  <p><%= link_to "View reviews", product_review_path(@product) %></p>
+<p><%= link_to "View reviews", product_review_path(@product) %></p>
 
-  <% if user_signed_in? %>
-  <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
+<% if user_signed_in? %>
+<p><%= link_to "Add a review", new_product_review_path(@product) %></p>
 
-  <p><%= link_to "Edit", edit_product_path(@product) %></p>
+<p><%= link_to "Edit", edit_product_path(@product) %></p>
 
-  <p><%= link_to "Delete product", product_path(@product),
-    :data => {:confirm => "Are you sure?",
-    :method => "delete"} %></p>
-    <% else %>
-    <p>Sign in to add a review</p>
-    <% end %>
+<% if current_user && current_user.admin? %>
+<p><%= link_to "Delete product", product_path(@product),
+  :data => {:confirm => "Are you sure?",
+  :method => "delete"} %></p>
+  <% else %>
+  <p>Sorry, you do not have the access required to delete products</p>
+  <% end %>
+  <% else %>
+  <p>Sign in to add a review</p>
+  <% end %>
 
-    <p><%= link_to "Return to products", products_path %></p>
+  <p><%= link_to "Return to products", products_path %></p>
