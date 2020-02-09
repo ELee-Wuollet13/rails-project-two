@@ -4,7 +4,7 @@ require 'faker'
   Product.create! do |product|
     product.name = Faker::Device.model_name,
     product.cost =  Faker::Alphanumeric.alphanumeric(number: 3, min_numeric: 3),
-    product.country = Faker::Nation.nationality
+    product.country = Faker::Address.country
     5.times do
       product.review.new do |review|
         review.author = Faker::Name.name,
