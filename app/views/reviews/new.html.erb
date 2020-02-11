@@ -17,11 +17,11 @@
 
 <%= form_for [@product, @review] do |f| %>
 <%= f.label :author %>
-<%= f.text_field :author %>
+<%= f.text_field :author %> <br>
 <%= f.label :content %>
-<%= f.text_area :content %>
-<%= f.label :rating %>
-<%= f.text_area :rating %>
+<%= f.text_area :content %> <br>
+<%= f.label :rating  %>
+<%= f.number_field :rating %>
 <p><%= f.submit %></p>
 <% end %>
 
