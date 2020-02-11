@@ -20,7 +20,7 @@ _This app has been tested in Google Chrome_
 
 ## Known Bugs
 
-_No known bugs_
+_In some cases the back button will confuse routes because the route no longer has access to the ID's of objects it is trying to display_
 
 ## Support and contact details
 
