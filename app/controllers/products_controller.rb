@@ -16,7 +16,6 @@ class ProductsController < ApplicationController
       flash[:notice] = "You've successfully added and item!"
       redirect_to new_product_path
     else
-      # flash[:alert] = "Sorry, Looks like you didn't fill in the fields needed to make a new product."
       redirect_to new_product_path
     end
   end

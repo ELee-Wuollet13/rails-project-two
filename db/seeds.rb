@@ -1,5 +1,8 @@
 require 'faker'
 
+Product.destroy_all
+
+
 10.times do
   Product.create! do |product|
     product.name = Faker::Device.model_name,
@@ -16,3 +19,4 @@ require 'faker'
     end
   end
 end
+p "Created #{Product.count} products"
