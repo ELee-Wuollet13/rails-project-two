@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :reviews
   end
+  get '/most-reviewed' => 'products#most'
+  get '/recent' => 'products#recent'
+  get '/usa' => 'products#usa'
 end

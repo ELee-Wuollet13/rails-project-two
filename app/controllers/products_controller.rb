@@ -42,9 +42,27 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
+    redirect_to products_path
+  end
+
+  def most
+    if Product.most_reviews.any?
+      Product.most_reviews.each do |product|
+        @product = product
+      end
+    end
     render :show
   end
 
+  def recent
+    @products = Product.three_recent
+    render :recent
+  end
+
+  def usa
+    @products = Product.usa_made
+    render :usa
+  end
 
   private
   def product_params

@@ -1,16 +1,14 @@
 class Product < ApplicationRecord
-  has_many :review, dependent: :destroy
 
-  scope :american, -> { where(country: "United States || USA || America")}
-  # scope :newest, -> { where("created_at >=?": Time.)}
-  scope :most_reviewed, -> {(
-    select("products.id, products.name, count(reviews.id) as reviews_count")
+  scope :most_reviews, -> {(
+    select("products.id, products.name, products.cost, products.country, count(reviews.id) as review_count")
     .joins(:reviews)
     .group("products.id")
-    .order("reviews_count DESC")
-    .limit(3)
+    .order("review_count DESC")
+    .limit(1)
     )}
-
+    scope :three_recent, -> { order(created_at: :desc).limit(3) }
+    scope :usa_made, -> {where("country = 'United States'")}
 
     validates :name, presence: true
     validates_length_of :name, maximum: 100
@@ -19,8 +17,8 @@ class Product < ApplicationRecord
 
     before_save(:titleize_product)
     private
-    def titleize_product
-      self.name = self.name.try(:titleize)
+     def titleize_product
+       self.name = self.name.try(:titleize)
+     end
 
-    end
   end
