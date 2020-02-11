@@ -1,15 +1,15 @@
-<%# <% if @product.errors.any? %> %>
-  <!-- <h3>Please fix these errors:</h3>
-  <ul> -->
-    <%# <% @product.errors.full_messages.each do |message| %> %>
-      <!-- <li><%= message %></li> -->
-    <%# <% end %> %>
-  <!-- </ul> -->
-<%# <% end %> %>
+<% if @product.errors.any? %>
+<h3>Please fix these errors:</h3>
+<ul>
+  <% @product.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+  </ul>
+  <% end %>
 
-<h2>New Product!</h2>
+  <h2>New Product!</h2>
 
-<%= form_for @product do |f| %>
+  <%= form_for @product do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label :cost %>
@@ -17,6 +17,6 @@
   <%= f.label :country %>
   <%= f.text_field :country %><br>
   <%= f.submit  %>
-<% end %>
+  <% end %>
 
-<p><%= link_to "Return to index", products_path %></p>
+  <p><%= link_to "Return to index", products_path %></p>

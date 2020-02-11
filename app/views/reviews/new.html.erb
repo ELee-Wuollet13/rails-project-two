@@ -1,4 +1,16 @@
+
+
 <% if user_signed_in? %>
+
+<% if @review.errors.any? %>
+<h3>Please fix these errors:</h3>
+<ul>
+  <% @review.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+  <% end %>
+  </ul>
+  <% end %>
+
 
 <h1>Add a new review:</h1>
 

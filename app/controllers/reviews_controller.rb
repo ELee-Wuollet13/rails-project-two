@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all
-    render :index
+    render :show
   end
 
   def new

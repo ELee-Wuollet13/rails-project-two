@@ -1,25 +1,4 @@
 class ProductsController < ApplicationController
-  scope :newest, -> { where("created_at >=?": Time.)}
-  scope :most_reviewed, -> {(
-    select("products.id, products.name, count(reviews.id) as reviews_count")
-    .joins(:reviews)
-    .group("products.id")
-    .order("reviews_count DESC")
-    .limit(3)
-    )}
-  scope :american, -> { where(country: "United States || USA || America")}
-
-
-
-
-
-
-
-
-  # validates :name, presence: true
-  # validates_length_of :name, maximum: 100
-  # validates :cost, presence: true
-  # validates :country, presence: true
 
   def index
     @products = Product.all
@@ -37,8 +16,8 @@ class ProductsController < ApplicationController
       flash[:notice] = "You've successfully added and item!"
       redirect_to new_product_path
     else
-      flash[:alert] = "Sorry, that item didn't load."
-      redirect_to signup_path
+      flash[:alert] = "Sorry, Looks like you didn't fill in the fields needed to make a new product."
+      redirect_to new_product_path
     end
   end
 
