@@ -1,9 +1,9 @@
 <h1><%= @product.name %></h1>
 
-<% if @product.review.any? %>
+<% if @product.reviews.any? %>
 <h4>Here are the users who have reviewed this product:</h4>
 
-<% @product.review.each do |review| %>
+<% @product.reviews.each do |review| %>
 <ul>
   <li>
     <%=  review.author %>

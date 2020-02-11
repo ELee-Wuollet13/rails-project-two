@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-
+  has_many :reviews 
   scope :most_reviews, -> {(
     select("products.id, products.name, products.cost, products.country, count(reviews.id) as review_count")
     .joins(:reviews)

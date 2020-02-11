@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def new
     @product = Product.find(params[:product_id])
-    @review = @product.review.new
+    @review = @product.reviews.new
     render :new
   end
 
@@ -23,13 +23,13 @@ class ReviewsController < ApplicationController
 
   def edit
     @product = Product.find(params[:product_id])
-    @review = Review.find(params[:id])
+    @review = Review.all
     render :edit
   end
 
   def show
-    @product = Product.find(params[:product_id])
-    @review = Review.find(params[:id])
+    @product = Product.find(params[:id])
+    @reviews = Review.all
     render :show
   end
 
