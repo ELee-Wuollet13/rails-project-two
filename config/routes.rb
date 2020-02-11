@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
   get '/most-reviewed' => 'products#most'
   get '/recent' => 'products#recent'
-  get '/usa' => 'products#usa'
+  get '/america' => 'products#america'
 end

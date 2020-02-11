@@ -59,9 +59,9 @@ class ProductsController < ApplicationController
     render :recent
   end
 
-  def usa
-    @products = Product.usa_made
-    render :usa
+  def america
+    @products = Product.america_made
+    render :america
   end
 
   private

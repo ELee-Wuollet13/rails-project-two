@@ -15,7 +15,8 @@ class ReviewsController < ApplicationController
       @product = Product.find(params[:product_id])
         @review = @product.reviews.new(review_params)
     if @review.save
-      render :new
+      flash[:notice] = "Your review has been saved!"
+      render :show
     else
       render :new
     end
